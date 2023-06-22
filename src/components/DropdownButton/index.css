@@ -1,0 +1,7 @@
+.ExpandDown {
+  @apply transition-all duration-200 ease-linear;
+}
+
+.DropButton {
+  @apply transition-all origin-top-right ease-in-out duration-100
+}
