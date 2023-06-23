@@ -33,8 +33,8 @@ function AppSidebar() {
 
   return (
     <>
-    <div className="flex self-stretch">
-      <div className={`AppSidebar transition-all sm:absolute sm:h-full sm:left-0 flex flex-col items-center self-stretch gap-2 w-[350px] ${toggleSidebar ? "sm:w-[350px]" : "sm:w-0" } bg-white shadow-lg z-10`}>
+    <div className={`flex sm:absolute sm:left-0 sm:top-0 sm:bottom-0 self-stretch ${!toggleSidebar && "sm:-translate-x-[350px]"} transition-all`}>
+      <div className={`AppSidebar flex flex-col items-center self-stretch gap-2 w-[350px] bg-white shadow-lg z-10`}>
         <SidebarProfileView setChats={setChats} chats={chats} hideSidebar={hideSidebar} />
         <SidebarChatsView setChats={setChats} chats={chats}  />
       </div>

@@ -3,7 +3,6 @@ import { UserContext } from "../../features/User/context/UserContext";
 import DropdownButton from "../DropdownButton";
 import axios from "axios";
 import { ConversationContext } from "../../features/Chat/context/ConversationContext";
-import Modal from "../Modal";
 
 function SidebarProfileView({
   setChats,

@@ -11,5 +11,6 @@ enum MessageType {
 export type Message = {
   id: string;
   content: string;
+  correction?: string;
   type: MessageType;
 }
