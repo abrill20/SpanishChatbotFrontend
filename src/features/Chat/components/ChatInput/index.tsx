@@ -3,6 +3,7 @@ import { ConversationContext } from "../../context/ConversationContext";
 import { UserContext } from "../../../../features/User/context/UserContext";
 import axios from "axios";
 import { Message } from "../../../../types/Message";
+import sendUrl from "/src/assets/icons/send.png"
 
 function ChatInput({
   messages,
@@ -60,7 +61,7 @@ function ChatInput({
           onClick={handleSubmit}
           disabled={!message}
         >
-          <div className="w-6 h-6 bg-contain bg-center" style={{backgroundImage: "url(/src/assets/icons/send.png)"}}></div>
+          <div className="w-6 h-6 bg-contain bg-center" style={{backgroundImage: `url(${sendUrl})`}}></div>
         </button>
       </div>
     </div>

@@ -4,6 +4,7 @@ import axios from "axios";
 import SidebarChatsView from "./SidebarChatsView";
 import SidebarProfileView from "./SidebarProfileView";
 import { UserContext } from "../features/User/context/UserContext";
+import menuUrl from "/src/assets/icons/menu.png"
 
 function AppSidebar() {
 
@@ -40,7 +41,7 @@ function AppSidebar() {
       </div>
     </div>
     <div className="absolute top-3 left-3 flex flex-col items-center justify-center gap-2">
-      <button className=" text-white bg-contain bg-center h-7 w-7 rounded-md" style={{backgroundImage: "url(/src/assets/icons/menu.png)"}} onClick={() => setToggleSidebar(!toggleSidebar)}></button>
+      <button className=" text-white bg-contain bg-center h-7 w-7 rounded-md" style={{backgroundImage: `url(${menuUrl})`}} onClick={() => setToggleSidebar(!toggleSidebar)}></button>
     </div>
     </>
   );

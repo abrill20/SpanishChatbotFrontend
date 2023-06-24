@@ -1,5 +1,6 @@
 import axios from "axios";
 import DropdownButton from "../DropdownButton";
+import expandDownUrl from "/src/assets/icons/expand-down.png";
 
 function SidebarChat({
   id,
@@ -47,7 +48,7 @@ function SidebarChat({
         <div className="text-sm font-sans font-light overflow-hidden text-ellipsis whitespace-nowrap">
           {placeholderText}
         </div>
-        <DropdownButton showOnlyOnHover={true} onButtonClick={deleteChat} iconURL="/src/assets/icons/expand-down.png" buttonText="Delete" />
+        <DropdownButton showOnlyOnHover={true} onButtonClick={deleteChat} iconURL={expandDownUrl} buttonText="Delete" />
       </div>
     </button>
   );
