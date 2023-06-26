@@ -17,7 +17,7 @@ function ChatConversation({
   useEffect(() => {
     if (selectedConversation) {
       axios
-        .get(`http://localhost:8000/chat/${selectedConversation}/messages`, {
+        .get(`${process.env.API}/chat/${selectedConversation}/messages`, {
           withCredentials: true,
         })
         .then((response) => {

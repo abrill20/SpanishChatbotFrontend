@@ -14,7 +14,7 @@ function SidebarChat({
   const deleteChat = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.stopPropagation();
     axios
-      .delete(`http://localhost:8000/chat/${id}`, { withCredentials: true })
+      .delete(`${process.env.API}/chat/${id}`, { withCredentials: true })
       .then(() => {
         console.log("deleted chat");
         removeChat(id);

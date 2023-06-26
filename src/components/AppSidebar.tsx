@@ -18,11 +18,10 @@ function AppSidebar() {
   const [chats, setChats] = useState<Chat[]>([]);
 
   const { user } = useContext(UserContext)!;
-
   useEffect(() => {
     if (user) {
       axios
-        .get("http://localhost:8000/chat", { withCredentials: true })
+        .get(`${process.env.API}/chat`, { withCredentials: true })
         .then((response) => {
           console.log(response);
           setChats(response.data);

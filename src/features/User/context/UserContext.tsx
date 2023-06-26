@@ -21,7 +21,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
 
   const logout = () => {
-    axios.get('http://localhost:8000/user/logout', { withCredentials: true })
+    axios.get(`${process.env.API}/user/logout`, { withCredentials: true })
       .then(response => {
         console.log(response);
         setUser(null);
@@ -33,7 +33,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
     console.log("create new account: ", name, email, password);
     axios
       .post(
-        "http://localhost:8000/user/register/",
+        `${process.env.API}/user/register/`,
         {
           username: name,
           email,
@@ -51,7 +51,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
   const login = (email: string, password: string) => {
     axios
       .post(
-        "http://localhost:8000/user/login",
+        `${process.env.API}/user/login`,
         {
           email,
           password,
@@ -67,7 +67,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
   }
 
   useEffect(() => {
-    axios.get('http://localhost:8000/user', { withCredentials: true })
+    axios.get(`${process.env.API}/user`, { withCredentials: true })
       .then((response) => {
         console.log("data", response.data);
         setUser(response.data);

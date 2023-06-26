@@ -24,7 +24,7 @@ function SidebarProfileView({
     const chatName = prompt("Enter a chat name");
     if (chatName) {
       const response = await axios.post(
-        "http://localhost:8000/chat/",
+        `${process.env.API}/chat/`,
         { title: chatName },
         { withCredentials: true }
       );

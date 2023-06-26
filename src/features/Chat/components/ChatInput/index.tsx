@@ -26,7 +26,7 @@ function ChatInput({
     if (selectedConversation && user) {
       axios
         .post(
-          "http://localhost:8000/message/",
+          `${process.env.API}/message/`,
           {
             chatId: selectedConversation,
             content: message,
