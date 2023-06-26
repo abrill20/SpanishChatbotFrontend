@@ -26,7 +26,7 @@ function ChatInput({
     if (selectedConversation && user) {
       axios
         .post(
-          `${process.env.API}/message/`,
+          `${import.meta.env.VITE_API}/message/`,
           {
             chatId: selectedConversation,
             content: message,

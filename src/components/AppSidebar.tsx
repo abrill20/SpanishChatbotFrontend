@@ -21,7 +21,7 @@ function AppSidebar() {
   useEffect(() => {
     if (user) {
       axios
-        .get(`${process.env.API}/chat`, { withCredentials: true })
+        .get(`${import.meta.env.VITE_API}/chat`, { withCredentials: true })
         .then((response) => {
           console.log(response);
           setChats(response.data);

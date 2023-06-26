@@ -17,7 +17,7 @@ function ChatConversation({
   useEffect(() => {
     if (selectedConversation) {
       axios
-        .get(`${process.env.API}/chat/${selectedConversation}/messages`, {
+        .get(`${import.meta.env.VITE_API}/chat/${selectedConversation}/messages`, {
           withCredentials: true,
         })
         .then((response) => {
