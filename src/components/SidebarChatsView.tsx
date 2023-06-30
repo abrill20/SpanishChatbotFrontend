@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import SidebarChat from "../SidebarChat";
-import { ConversationContext } from "../../features/Chat/context/ConversationContext";
+import SidebarChat from "./SidebarChat";
+import { ConversationContext } from "../features/Chat/context/ConversationContext";
 
 function SidebarChatsView({
   setChats,

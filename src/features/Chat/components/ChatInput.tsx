@@ -1,16 +1,18 @@
 import { useContext, useState } from "react";
-import { ConversationContext } from "../../context/ConversationContext";
-import { UserContext } from "../../../../features/User/context/UserContext";
+import { ConversationContext } from "../context/ConversationContext";
+import { UserContext } from "../../User/context/UserContext";
 import axios from "axios";
-import { Message } from "../../../../types/Message";
+import { Message, MessageType } from "../../../types/Message";
 import sendUrl from "/src/assets/icons/send.png"
 
 function ChatInput({
   messages,
   setMessages,
+  setResponsePending
 }: {
   messages: Message[];
   setMessages: (messages: Message[]) => void;
+  setResponsePending: (responsePending: boolean) => void;
 }) {
   const [message, setMessage] = useState("");
 
@@ -24,6 +26,15 @@ function ChatInput({
   const handleSubmit = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     if (selectedConversation && user) {
+      setResponsePending(true);
+      setMessages([
+        {
+          id: Math.random().toString(),
+          content: message,
+          type: "SENT" as MessageType,
+        },
+        ...messages,
+      ]);
       axios
         .post(
           `${import.meta.env.VITE_API}/message/`,
@@ -35,6 +46,7 @@ function ChatInput({
         )
         .then((response) => {
           console.log(response);
+          setResponsePending(false);
           setMessages([
             response.data.chatBotMessage,
             response.data.message,

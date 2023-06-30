@@ -1,5 +1,5 @@
 import axios from "axios";
-import DropdownButton from "../DropdownButton";
+import DropdownButton from "./DropdownButton";
 import expandDownUrl from "/src/assets/icons/expand-down.png";
 
 function SidebarChat({

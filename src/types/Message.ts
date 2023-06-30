@@ -2,7 +2,7 @@
 // import { User } from "./User";
 
 // send or receive message type
-enum MessageType {
+export enum MessageType {
   SENT = "SENT",
   RECEIVED = "RECEIVED",
 }

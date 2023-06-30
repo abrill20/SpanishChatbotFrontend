@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { UserContext } from "../../features/User/context/UserContext";
-import DropdownButton from "../DropdownButton";
+import { UserContext } from "../features/User/context/UserContext";
+import DropdownButton from "./DropdownButton";
 import axios from "axios";
-import { ConversationContext } from "../../features/Chat/context/ConversationContext";
+import { ConversationContext } from "../features/Chat/context/ConversationContext";
 import userCircleUrl from "/src/assets/icons/user_circle.png"
 import newChatUrl from "/src/assets/icons/new_chat.png"
 import closeUrl from "/src/assets/icons/close.png"
