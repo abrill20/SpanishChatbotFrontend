@@ -12,7 +12,7 @@ function MessageView({ id, content, type, correction }: Message) {
       }`}
     >
       <div
-        className={`MainMessage ${!correction && "rounded-b-lg shadow-md"} ${
+        className={`MainMessage ${(!correction || correction == "null") && "rounded-b-lg shadow-md"} ${
           type == "RECEIVED"
             ? "rounded-tr-lg bg-white"
             : "rounded-tl-lg bg-blue-300"
@@ -32,7 +32,7 @@ function MessageView({ id, content, type, correction }: Message) {
       </div>
       <div
         className={`CorrectionMessage bg-red-200 rounded-b-lg shadow-md ${
-          correction ? "block" : "hidden"
+          (correction && correction != "null") ? "block" : "hidden"
         }`}
       >
         <div className="p-2 font-sans font-normal break-words">
